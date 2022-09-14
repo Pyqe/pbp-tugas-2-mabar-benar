@@ -20,14 +20,14 @@
       <th>Item URL</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
-    {% for item in catalog_item_list %}
+    {% for x in catalog_item_list %}
         <tr>
-            <th>{{item.item_name}}</th>
-            <th>{{item.item_price}}</th>
-            <th>{{item.item_stock}}</th>
-            <th>{{item.rating}}</th>
-            <th>{{item.description}}</th>
-            <th>{{item.item_url}}</th>
+            <th>{{x.item_name}}</th>
+            <th>{{x.item_price}}</th>
+            <th>{{x.item_stock}}</th>
+            <th>{{x.rating}}</th>
+            <th>{{x.description}}</th>
+            <th>{{x.item_url}}</th>
         </tr>
     {% endfor %}
   </table>
