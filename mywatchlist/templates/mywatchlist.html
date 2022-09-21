@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+
+  <h1>Tugas 3 PBP</h1>
+
+  <h5>Nama: </h5>
+  <p>{{ nama }}</p>
+
+  <h5>NPM: </h5>
+  <p>{{ npm }}</p>
+
+  <table>
+    <tr>
+      <th>SUDAH DITONTON</th>
+      <th>JUDUL</th>
+      <th>RATING</th>
+      <th>TANGGAL RILIS</th>
+      <th>REVIEW</th>
+    </tr>
+    {% for item in list_watchlist %}
+        <tr>
+            <th>{{ item.watched }}</th>
+            <th>{{ item.title }}</th>
+            <th>{{ item.rating }}</th>
+            <th>{{ item.release_date }}</th>
+            <th>{{ item.review }}</th>
+        </tr>
+    {% endfor %}
+  </table>
+
+ {% endblock content %}

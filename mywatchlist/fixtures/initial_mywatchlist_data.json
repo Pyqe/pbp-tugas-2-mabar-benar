@@ -1,0 +1,112 @@
+[
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 1,
+        "fields": {
+            "watched": true,
+            "title": "Sultan Agung",
+            "rating": 5,
+            "release_date": "2019-08-23",
+            "review": "Banyak adegan-adegan ikonik yang sangat quotable."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 2,
+        "fields": {
+            "watched": false,
+            "title": "Morbius",
+            "rating": 5,
+            "release_date": "2022-03-30",
+            "review": "Salah satu film sepanjang masa."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 3,
+        "fields": {
+            "watched": false,
+            "title": "Cats",
+            "rating": 5,
+            "release_date": "2019-12-27",
+            "review": "Film musikal berisi kucing."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 4,
+        "fields": {
+            "watched": false,
+            "title": "Emoji Movie",
+            "rating": 5,
+            "release_date": "2017-08-11",
+            "review": "Film animasi berisi emoji."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 5,
+        "fields": {
+            "watched": true,
+            "title": "The Incredibles",
+            "rating": 5,
+            "release_date": "2004-10-24",
+            "review": "Saya pernah menonton ini saat masih sangat kecil, jadinya sudah lupa ceritanya."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 6,
+        "fields": {
+            "watched": true,
+            "title": "Three Idiots",
+            "rating": 5,
+            "release_date": "2009-12-25",
+            "review": "Saya sangat suka. Film ini memberi pelajaran tentang persahabatan dan sistem sekolah."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 7,
+        "fields": {
+            "watched": false,
+            "title": "Birdemic",
+            "rating": 5,
+            "release_date": "2010-02-27",
+            "review": "Filmnya terlihat menarik setelah saya melihat klip salah satu adegannya di YouTube."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 8,
+        "fields": {
+            "watched": true,
+            "title": "Joker",
+            "rating": 5,
+            "release_date": "2019-10-02",
+            "review": "Film bagus."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 9,
+        "fields": {
+            "watched": true,
+            "title": "Us",
+            "rating": 5,
+            "release_date": "2019-09-20",
+            "review": "Salah satu film horor pertama yang saya sukai."
+        }
+    },
+    {
+        "model": "mywatchlist.MyWatchList",
+        "pk": 10,
+        "fields": {
+            "watched": false,
+            "title": "Coco",
+            "rating": 5,
+            "release_date": "2017-11-22",
+            "review": "Salah satu film yang sampai sekarang belum saya tonton. Terlihat mirip dengan salah satu film yang sudah saya tonton, The Book of Life."
+        }
+    }
+]
