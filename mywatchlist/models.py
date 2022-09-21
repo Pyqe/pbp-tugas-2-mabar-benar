@@ -1,5 +1,4 @@
 from logging.handlers import RotatingFileHandler
-from turtle import title
 from django.db import models
 
 class MyWatchList(models.Model):
