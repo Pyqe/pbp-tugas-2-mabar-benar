@@ -7,9 +7,9 @@ class SimpleTest(unittest.TestCase):
         self.client = Client()
 
     def test_details(self):
-        response = self.client.get('html/')
+        response = self.client.get('/mywatchlist/html/')
         self.assertEqual(response.status_code, 200)
-        response = self.client.get('xml/')
+        response = self.client.get('/mywatchlist/xml/')
         self.assertEqual(response.status_code, 200)
-        response = self.client.get('json/')
+        response = self.client.get('/mywatchlist/json/')
         self.assertEqual(response.status_code, 200)
