@@ -2,7 +2,25 @@
 
 {% block content %}
 
-    <h1>To Do List milik {{username}}</h1>
+    <h1>To Do List Milik {{username}}</h1>
+
+    <table>
+        <tr>
+            <td>Tanggal Pembuatan</td>
+            <td>Judul</td>
+            <td>Deskripsi</td>
+        </tr>
+
+        {% for task in daftar_task %}
+            <tr>
+                <td>{{task.date}}</td>
+                <td>{{task.title}}</td>
+                <td>{{task.description}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <div style = "background-color: black;"><button><a href = "{% url 'todolist:create_task' %}">Buat task baru</a></button></div>
 
     <button><a href = "{% url 'todolist:logout_user' %}">Logout</a></button>
 

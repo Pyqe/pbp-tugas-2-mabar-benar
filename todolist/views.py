@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
+from django.utils import timezone
 from todolist.models import Task
 
 @login_required(login_url = "/todolist/login/")
@@ -41,3 +42,11 @@ def register(request):
             return redirect("todolist:login_user")
     context = {"form": form}
     return render(request, "register.html", context)
+
+def create_task(request):
+    if request.method == "POST":
+        judul = request.POST.get("judul")
+        deskripsi = request.POST.get("deskripsi")
+        Task.objects.create(user = request.user, date = timezone.now(), title = judul, description = deskripsi)
+        return redirect("todolist:show_todolist")
+    return render(request, "create-task.html")
