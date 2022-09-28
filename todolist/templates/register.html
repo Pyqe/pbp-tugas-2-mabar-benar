@@ -10,7 +10,7 @@
         
         <h1>Formulir Registrasi</h1>  
 
-            <form method="POST">  
+            <form method = "POST">  
                 {% csrf_token %}  
                 <table>  
                     {{form.as_table}}  
@@ -25,7 +25,7 @@
             <ul>   
                 {% for message in messages %}  
                     <li>{{message}}</li>  
-                    {% endfor %}  
+                {% endfor %}  
             </ul>   
         {% endif %}
 
