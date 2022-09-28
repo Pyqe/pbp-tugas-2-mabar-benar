@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>To Do List milik {{username}}</h1>
+
+    <button><a href = "{% url 'todolist:logout' %}">Logout</a></button>
+
+{% endblock content %}
