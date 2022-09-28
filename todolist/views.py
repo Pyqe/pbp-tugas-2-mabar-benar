@@ -29,7 +29,7 @@ def login_user(request):
 
 def logout_user(request):
     logout(request)
-    return redirect("todolist:login")
+    return redirect("todolist:login_user")
 
 def register(request):
     form = UserCreationForm()
@@ -38,6 +38,6 @@ def register(request):
         if form.is_valid():
             form.save()
             messages.success(request, "Akun berhasil dibuat.")
-            return redirect("todolist:login")
+            return redirect("todolist:login_user")
     context = {"form": form}
     return render(request, "register.html", context)
