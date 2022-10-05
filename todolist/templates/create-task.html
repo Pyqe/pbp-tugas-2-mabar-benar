@@ -6,12 +6,16 @@
 
 {% block content %}
 
-    <div class = "create-task">
-        <h1>Buat Task Baru</h1>
+    <ul class = "nav navbar-expand" style = "background-color: purple; color: white; box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);">
+        <li class = "nav-item mt-1 mb-1" style = "margin: 20px;">
+            <h1>To Do List - Task Baru</h1>
+        </li>
+    </ul>
 
-        <form method = "POST">
+    <div class = "create-task containers-fluid text-center mt-5">
+        <form class = "mt-3" method = "POST">
             {% csrf_token %}
-            <table>
+            <table  class = "jumbotron table table-hover table-borderless rounded-4" style = "background-color: lavender; max-width: 330px; box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);">
                 <tr>
                     <td>Judul: </td>
                     <td><input type = "text" name = "judul" placeholder = "Judul" class = "form-control"></td>
@@ -24,7 +28,7 @@
 
                 <tr>
                     <td></td>
-                    <td><input type = "submit" value = "MANTUL"></td>
+                    <td><input class = "btn login_btn" style = "background-color: purple; color: white;" type = "submit" value = "MANTUL"></td>
                 </tr>
             </table>
         </form>

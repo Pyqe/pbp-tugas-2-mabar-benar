@@ -1,4 +1,16 @@
-table, td, th
+.jumbotron
 {
-    border: 1px solid black;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.card
+{
+    box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);
+    transition: .1s transform cubic-bezier(.155, 1.105, .295, 1.12), .1s box-shadow, .1s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
 }
