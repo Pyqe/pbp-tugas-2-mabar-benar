@@ -16,7 +16,7 @@ Formulir bisa dibuat dengan dua cara. Cara pertama adalah membuat *class* formul
 4. `views.py` melakukan `save()`.
 5. Data baru akan tersimpan ke *database*.
 
-## Implementasi
+## Implementasi Tugas 4
 
 1. Lakukan `startapp` untuk membuat aplikasi baru bernama `todolist`.
 2. Tambah `todolist` pada `INSTALLED_APPS` di dalam `settings.py` di *folder* `project_django`.
@@ -36,3 +36,41 @@ Formulir bisa dibuat dengan dua cara. Cara pertama adalah membuat *class* formul
     - `register.html` yang memberikan formulir registrasi akun.
     - `create-task.html` yang memberikan formulir pembuatan *task* baru.
 9. *Push* semua ke GitHub.
+
+## Perbedaan CSS Inline, Internal, dan External
+
+| Inline | Internal | External |
+|:- |:- |:- |
+| Berupa atribut `style` pada *tag* suatu elemen. | Berupa *tag* `<style>` pada suatu *file* HTML. | Berupa *file* `.css` yang di-*import* ke *file* HTML. |
+| Hanya mengatur *style* satu elemen. | Mengatur *style* semua elemen pada satu *file* HTML. | Mengatur *style* semua elemen pada satu *file* HTML dan *file* `.css` yang sama bisa digunakan di banyak *file* HTML. |
+
+## Contoh Tag HTML5
+
+- `<body>`: Isi konten atau badan dari *file* HTML.
+- `<table>`: Tabel.
+- `<thead>`: Kepala tabel.
+- `<tbody>`: Isi konten atau badan tabel.
+- `<tr>`: Baris tabel.
+- `<td>`: Data tabel.
+- `<input>`: Elemen yang bisa diinteraksikan oleh pengguna untuk memberi data masukan.
+- `<nav>`: *Navigation bar*.
+- `<br>`: *Line-break*.
+
+## Contoh Selector CSS
+
+- `.namaclass`: Menyeleksi elemen yang `class`-nya adalah `namaclass`.
+- `#namaid`: Menyeleksi elemen yang `id`-nya adalah `namaid`.
+- `namatag`: Menyeleksi elemen yang *tag*-nya adalah `namatag`.
+
+## Implementasi Tugas 5
+
+1. Masukkan *file* `bootstrap.css` dan `bootstrap.css.map` pada *folder* `css` yang ada di dalam *folder* `static`.
+2. *Import* `bootstrap.css` pada `base.html`.
+3. Memberi `<nav>` pada setiap *file* HTML untuk membuat *navigation bar* yang berisi informasi halaman dan tombol-tombol penting seperti tombol membuat *task* baru dan *logout* pada `todolist.html`.
+4. Membuat `container` yang berisi tabel login, tabel formulir registrasi, dan tabel pembuatan *task* baru pada masing-masing *file* HTMLnya untuk memosisikan tabel-tabel tersebut pada tengah layar.
+5. Mengatur `max-width` tabel-tabel tersebut supaya mempunyai lebar yang tertentukan, tetapi tetap responsif apabila layar lebih sempit.
+6. Memberi *style* seperti warna pada setiap elemen.
+7. Menambahkan gambar latar belakang dengan mencantumkan gambar pada *folder* `images` yang ada di dalam *folder* `static` dan meng-*import* gambar tersebut pada `base.html` sebagai gambar latar belakang.
+8. Untuk setiap *task* pada `todolist.html`, tambahkan `<card>` untuk merepresentasikan setiap *task* sebagai satu *card* dengan *card*-*card* tersebut tersusun dari atas ke bawah.
+9. Tambahkan *style* dan `container` untuk *card*-*card* tersebut supaya sama dengan elemen-elemen pada halaman lain.
+10. Tambahkan `.card:hover` pada `style.css` untuk yang membesarkan ukuran *card* apabila *cursor* menyentuh *card* tersebut.
