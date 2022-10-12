@@ -56,3 +56,11 @@ def create_task(request):
 def show_json(request):
     data = Task.objects.filter(user = request.user)
     return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@login_required(login_url = "/todolist/login/")
+def add_task(request):
+    if request.method == "POST":
+        judul = request.POST.get("judul")
+        deskripsi = request.POST.get("deskripsi")
+        Task.objects.create(user = request.user, date = timezone.now(), title = judul, description = deskripsi)
+        return redirect("todolist:show_todolist")
