@@ -1,5 +1,44 @@
 {% extends "base.html" %}
 
+{% block meta %}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(() => show_task_cards());
+
+        function show_task_cards()
+        {
+            $.get("./json", (data) =>
+            {
+                for(let i = 0; i < data.length; i++)
+                {
+                    $("#task-cards").append($("<div></div>")
+                        .addClass("jumbotron card mt-3 rounded-5")
+                        .attr("style", "background-color: lavender; width: 250px;")
+                        .append($("<div></div>")
+                            .addClass("card-body")
+                            .append($("<h5></h5>")
+                                .addClass("card-title")
+                                .append(data[i].fields.title)
+                            )
+                            .append($("<p></p>")
+                                .addClass("card-text")
+                                .append(data[i].fields.description)
+                            )
+                            .append($("<p></p>")
+                                .attr("style", "text-align: right;")
+                                .append(data[i].fields.date)
+                            )
+                        )
+                    );
+                }
+            });
+        }
+    </script>
+
+{% endblock meta %}
+
 {% block content %}
 
     <ul class = "nav navbar-expand" style = "background-color: purple; color: white; box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);">
@@ -16,15 +55,7 @@
         </li>
     </ul>
 
-    {% for task in daftar_task %}
-    <div class = "jumbotron card mt-3 rounded-5" style="background-color: lavender; width: 250px;">
-        <div class = "card-body">
-            <h5 class = "card-title">{{task.title}}</h5>
-            <p class="card-text">{{task.description}}</p>
-            <p style = "text-align: right;">{{task.date}}</p>
-        </div>
-    </div>
-    {% endfor %}
+    <div id = "task-cards"></div>
 
     <br>
 

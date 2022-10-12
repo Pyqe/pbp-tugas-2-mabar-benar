@@ -4,14 +4,14 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
+from django.http import HttpResponse
+from django.core import serializers
 from todolist.models import Task
 
 @login_required(login_url = "/todolist/login/")
 def show_todolist(request):
-    daftar_task = Task.objects.filter(user = request.user)
     context = {
-        "username": request.user,
-        "daftar_task": daftar_task,
+        "username": request.user
     }
     return render(request, "todolist.html", context)
 
@@ -43,6 +43,7 @@ def register(request):
     context = {"form": form}
     return render(request, "register.html", context)
 
+@login_required(login_url = "/todolist/login/")
 def create_task(request):
     if request.method == "POST":
         judul = request.POST.get("judul")
@@ -50,3 +51,8 @@ def create_task(request):
         Task.objects.create(user = request.user, date = timezone.now(), title = judul, description = deskripsi)
         return redirect("todolist:show_todolist")
     return render(request, "create-task.html")
+
+@login_required(login_url = "/todolist/login/")
+def show_json(request):
+    data = Task.objects.filter(user = request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
