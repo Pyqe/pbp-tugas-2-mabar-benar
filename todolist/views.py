@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from todolist.models import Task
 
@@ -60,7 +60,16 @@ def show_json(request):
 @login_required(login_url = "/todolist/login/")
 def add_task(request):
     if request.method == "POST":
+        tanggal = timezone.now()
         judul = request.POST.get("judul")
         deskripsi = request.POST.get("deskripsi")
-        Task.objects.create(user = request.user, date = timezone.now(), title = judul, description = deskripsi)
-        return redirect("todolist:show_todolist")
+        curTask = Task.objects.create(user = request.user, date = tanggal, title = judul, description = deskripsi)
+        context = {
+            "pk": curTask.id,
+            "fields": {
+                "date": tanggal,
+                "title": judul,
+                "description": deskripsi
+            }
+        }
+        return JsonResponse(context)
